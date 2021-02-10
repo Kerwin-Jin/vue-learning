@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Vue-transition</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> 
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"> </script>
+        
+		<style type="text/css">
+            .swiper-container {
+                width: 600px;
+                height: 300px;
+                border: 1px solid #000;
+            }  
+            
+		</style>
+	</head>
+	<body>
+        <div id="app">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" v-for="(data,index) in dataList" v-swiper="{
+                        current:index,
+                        length:dataList.length
+                    }">{{data}}</div>
+                </div>
+
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+             </div>
+        </div>
+    </body>
+    
+    <script type="text/javascript">
+
+        Vue.directive("swiper",{
+            inserted(el,binding){
+                // console.log(el);
+                console.log(binding.value);
+
+
+                //每次插入节点都初始化Swiper会有bug产生，所以在这里需要做个判断，
+                // 如果当前索引值==数组长度才初始化，这样只初始化了一次，就不会有bug产生了，传过来的参数是一个对象
+                // new Swiper ('.swiper-container',{
+                //         loop:true,
+                //         pagination: {
+                //             el: '.swiper-pagination',
+                //         }
+                //     }) 
+                
+                if(binding.value.current === binding.value.length-1){
+                    new Swiper ('.swiper-container',{
+                        loop:true,
+                        pagination: {
+                            el: '.swiper-pagination',
+                        }
+                    }) 
+                }
+                 
+            }
+        })
+       
+        const vm = new Vue({
+            el:"#app",
+            data:{
+                dataList:[]
+            },
+            mounted(){
+               setTimeout(() => {
+                   this.dataList = ["aa","bbb","cccc"]; 
+               }, 2000);
+            }
+        })
+
+	</script>
+</html>
