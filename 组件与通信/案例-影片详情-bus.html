@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>vue-refs</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<style type="text/css">
+			button{
+                border: none;
+                outline: none;
+                cursor: pointer;
+                border-radius: 5px;
+                height: 50px;
+                width: 100px;
+                transition: 0.2s;
+                margin-bottom: 10px;
+            }
+            button:hover{
+                background-color: #f40;
+                color: white;
+            }
+            .item{
+                border: 1px solid #000;
+                width: 300px;
+                margin: 10px;
+                border-radius: 10px;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .item button:hover{
+                background-color: #569cd6;
+            }
+            .detail{
+                width: 400px;
+                height: 300px;
+                border: 1px solid #000;
+                border-radius: 5px;
+                position: fixed;
+                right: 10px;
+                top: 300px;
+                padding: 10px;
+            }
+
+		</style>
+	</head>
+	<body>
+		<div id="app">
+            <button @click="getAjax()">获取信息</button>
+            
+            <film-item v-for="item,index in dataList" :key="item.filmId" :listitem="item"></film-item>
+
+            <film-detail></film-detail>
+            
+		</div>
+	</body> 
+    <script type="text/javascript">
+    
+        const bus = new Vue();
+
+        Vue.component("filmDetail",{
+            data(){
+                return {
+                    info:""
+                }
+            },
+            template:`
+                <div class="detail">{{info}}</div>
+            `,
+            mounted(){
+				let that = this;
+                bus.$on("showdetail", function(data){		//为什么要用箭头函数？
+                    that.info = data;
+                    // console.log(that.det);
+                })
+            }
+        })
+
+        
+        Vue.component("filmItem",{
+            template:`
+                <div class="item">
+                   <img :src="listitem.poster">
+                   <h1>{{listitem.name}}</h1>
+                   <button class="item" @click="getDetail(listitem)">详情</button>
+                </div>
+            `,
+            props:["listitem"],
+            methods:{
+                getDetail(item){
+                    // this.$emit("myevent",item.synopsis);
+                    bus.$emit("showdetail",item.synopsis);
+                }
+            }
+        })
+		
+		new Vue({
+			el:"#app",
+			data:{
+                dataList:[],
+			},
+			methods:{
+                getAjax(){
+                    fetch("./info.json")
+                    .then(res=>res.json())
+                    .then(res=>{
+                        this.dataList = res.data.films;
+                    })
+                }
+			}
+		})
+	</script>
+</html>

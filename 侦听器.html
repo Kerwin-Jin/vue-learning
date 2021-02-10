@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>vue基础</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			{{name}}
+			<ul>
+				<li v-for="item,index in arr">{{item}}</li>
+			</ul>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var app = new Vue({
+			el:"#app",
+			data:{
+				name:"ahuaer",
+				arr:["小明","小黄","小黑"]
+			},
+			watch:{
+				name:function(val){
+					console.log("name值被改变了");
+					console.log(val);
+				},
+				arr:function(val){
+					console.log("arr值被改变了");
+					console.log(val);
+				}
+			}
+			
+		})
+	</script>
+</html>

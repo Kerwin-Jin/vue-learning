@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>vue组件</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<Parent></Parent>
+		</div>
+	</body> 
+	<script type="text/javascript">
+		
+		
+		Vue.component("Child",{
+			data(){
+				return{
+					msg:"我是子组件"
+				}
+			},
+			template:`<div>{{msg}}--------------<h6>{{pmsg}}</h6></div>`,
+			props:["pmsg"]
+		})
+		
+		const Parent = {
+			data(){
+				return{
+					msg:"我是父组件",
+					info:"这是父亲传给儿子的info"
+				}
+			},
+			template:`
+				<div>
+					<h1>{{msg}}</h1>
+					<Child :pmsg="info"></Child>
+				<div>
+			`
+		}
+		
+		//整个APP页面
+		let app = new Vue({
+			el:"#app",
+			data:{
+				
+			},
+			components:{
+				Parent
+			}
+		})
+	</script>
+</html>

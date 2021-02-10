@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>vue基础</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<h1>记事本</h1>
+			<input type="text" value="" @keyup.enter="addTodo()" v-model="input"/>
+			<ul>
+				<li v-for="(item,index) in todoList">{{index+1}}-{{item}}<a href="javascript:;" @click="delItem(index)">删除</a></li>
+			</ul>
+			<div  v-show="todoList.length>0">
+				<span>待办：{{todoList.length}}</span>|<a href="javascript:;" @click="clear()">清空所有</a>
+			</div>
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var app = new Vue({
+			el:"#app",
+			data:{
+				todoList:[],
+				input:''
+			},
+			methods:{
+				addTodo(){
+					if(this.input.trim() == ''){
+						alert("请输入待办事项！");
+						return;
+					}
+					this.todoList.push(this.input);
+					this.input = '';
+				},
+				delItem(index){
+					this.todoList.splice(index,1);
+				},
+				clear(){
+					this.todoList = [];
+				}
+			}
+		})
+	</script>
+</html>

@@ -1,0 +1,516 @@
+{
+    "status": 0,
+    "data": {
+        "films": [
+            {
+                "filmId": 4835,
+                "name": "唐人街探案3",
+                "poster": "https://pic.maizuo.com/usr/movie/0f35af2416df5a58222f902362bc927e.jpg",
+                "actors": [
+                    {
+                        "name": "陈思诚",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/3abadb9868592f959bd4c8160b8a1653.jpg"
+                    },
+                    {
+                        "name": "刘昊然",
+                        "role": "秦风",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/1f376fc5a437e675ab0141c56bc4dc26.jpg"
+                    },
+                    {
+                        "name": "王宝强",
+                        "role": "唐仁",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/701ddb6f4e04751b84b01be9fe418f34.jpg"
+                    },
+                    {
+                        "name": "张子枫",
+                        "role": "",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/bf97810fa38188eb8fa0a7abc93b7cf7.jpg"
+                    }
+                ],
+                "director": "陈思诚",
+                "category": "喜剧|动作|悬疑",
+                "synopsis": "在《唐探2》结局的部分，唐仁和野田昊都接到一个来自日本的电话，大呼案子太难，提前透露了第三部的故事地点——东京。",
+                "filmType": {
+                    "name": "2D",
+                    "value": 1
+                },
+                "nation": "中国大陆",
+                "language": "汉语普通话 日语",
+                "videoId": "",
+                "premiereAt": 1613088000,
+                "timeType": 3,
+                "runtime": 130,
+                "item": {
+                    "name": "2D",
+                    "type": 1
+                },
+                "isPresale": true,
+                "isSale": false
+            },
+            {
+                "filmId": 5268,
+                "name": "送你一朵小红花",
+                "poster": "https://pic.maizuo.com/usr/movie/c3a32bd973128a58d969836ea8e0120e.jpg",
+                "actors": [
+                    {
+                        "name": "朱媛媛",
+                        "role": "陶慧",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/120f4a0b28f2aa7f59342617bae08651.jpg"
+                    },
+                    {
+                        "name": "高亚麟",
+                        "role": "韦江",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/b489fa6bf47a3c0553ee959ef907b181.jpg"
+                    },
+                    {
+                        "name": "韩延",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/25363888a18bee3f9a31788fbda32a84.jpg"
+                    },
+                    {
+                        "name": "易烊千玺",
+                        "role": "韦一航",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/f9b4b9f6f7564b4068aec8d37036459e.jpg"
+                    },
+                    {
+                        "name": "刘浩存",
+                        "role": "马小远",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/1f55dfac4f4ce02f46074113a465c702.jpg"
+                    }
+                ],
+                "director": "韩延",
+                "category": "剧情|家庭",
+                "synopsis": "该片围绕两个抗癌家庭的两组生活轨迹，讲述了一个温情的现实故事，思考和直面了每一个普通人都会面临的人生命题。",
+                "filmType": {
+                    "name": "2D",
+                    "value": 1
+                },
+                "nation": "中国大陆",
+                "language": "",
+                "videoId": "",
+                "premiereAt": 1609372800,
+                "timeType": 3,
+                "runtime": 0,
+                "grade": "8",
+                "item": {
+                    "name": "2D",
+                    "type": 1
+                },
+                "isPresale": true,
+                "isSale": false
+            },
+            {
+                "filmId": 5335,
+                "name": "你好，李焕英",
+                "poster": "https://pic.maizuo.com/usr/movie/3f97c0ef0eca443b9307fad1c05c188e.jpg",
+                "actors": [
+                    {
+                        "name": "贾玲",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/577c7d72a1908638a805b4be88aeb791.jpg"
+                    },
+                    {
+                        "name": "贾玲",
+                        "role": "贾晓玲",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/577c7d72a1908638a805b4be88aeb791.jpg"
+                    },
+                    {
+                        "name": "张小斐",
+                        "role": "李焕英",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/8e7578d4cae429675760aa74f5cc3da9.jpg"
+                    },
+                    {
+                        "name": "沈腾",
+                        "role": "沈光林",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/98c43da4b43bcf161d5b9c905253c016.jpg"
+                    },
+                    {
+                        "name": "陈赫",
+                        "role": "演员",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/4601fb466d358df29886c566a76808f8.jpg"
+                    }
+                ],
+                "director": "贾玲",
+                "category": "喜剧|剧情",
+                "synopsis": "2001年的某一天，刚刚考上大学的贾晓玲（贾玲 饰）经历了人生中的一次大起大落。一心想要成为母亲骄傲的她却因母亲突遭严重意外，而悲痛万分。在贾晓玲情绪崩溃的状态下，竟意外的回到了 1981 年，并与年轻的母亲李焕英（张小斐 饰）相遇，二人形影不离，宛如闺蜜。与此同时，也结识了一群天真善良的好朋友。晓玲以为来到了这片“广阔天地”，她可以凭借自己超前的思维，让母亲“大有作为”，但结果却让晓玲感到意外......",
+                "filmType": {
+                    "name": "2D",
+                    "value": 1
+                },
+                "nation": "中国大陆",
+                "language": "",
+                "videoId": "",
+                "premiereAt": 1613088000,
+                "timeType": 3,
+                "runtime": 128,
+                "item": {
+                    "name": "2D",
+                    "type": 1
+                },
+                "isPresale": true,
+                "isSale": false
+            },
+            {
+                "filmId": 5291,
+                "name": "心灵奇旅",
+                "poster": "https://pic.maizuo.com/usr/movie/2b2c8beb2909aa0d37379b2edf61a4d6.jpg",
+                "actors": [
+                    {
+                        "name": "彼特·道格特",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/afa387d942d501da8a28582a664ccc0b.jpg"
+                    },
+                    {
+                        "name": "坎普·鲍尔斯",
+                        "role": "Co-director",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/e36aa22a52af097011242f7b3e8f51de.jpg"
+                    },
+                    {
+                        "name": "杰米·福克斯",
+                        "role": "乔·加德纳 Joe Gardner",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/18af4e836f56ee5e185bc77408357e74.jpg"
+                    },
+                    {
+                        "name": "蒂娜·菲",
+                        "role": "22",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/e92ffa25674b616638c408fc1f5e96dd.jpg"
+                    },
+                    {
+                        "name": "菲利西亚·拉斯海德",
+                        "role": "Libba Gardner",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/d238bb7b8505f802e0e07d1df3adc80b.jpg"
+                    }
+                ],
+                "director": "彼特·道格特|坎普·鲍尔斯",
+                "category": "动画|喜剧|冒险",
+                "synopsis": "究竟是什么塑造了真正的你？2020年，迪士尼·皮克斯动画工作室全新原创电影《心灵奇旅》将聚焦乔伊·高纳(杰米·福克斯配音)。这位中学音乐老师获得了梦寐以求的机会——在纽约最好的爵士俱乐部演奏。但一个小失误把他从纽约的街道带到了一个奇幻的地方“The Great Before”。在那里，灵魂们获得培训，在前往地球之前将获得他们的个性特点和兴趣。决心要回到地球生活的乔认识了一个早熟的灵魂“二十二”(蒂娜·菲配音)，二十二一直找不到自己对于人类生活的兴趣。随着乔不断试图向二十二展示生命的精彩之处，他也将领悟一些人生终极问题的答案。",
+                "filmType": {
+                    "name": "3D",
+                    "value": 2
+                },
+                "nation": "美国",
+                "language": "",
+                "videoId": "",
+                "premiereAt": 1608854400,
+                "timeType": 3,
+                "runtime": 101,
+                "grade": "7.6",
+                "item": {
+                    "name": "3D",
+                    "type": 2
+                },
+                "isPresale": true,
+                "isSale": false
+            },
+            {
+                "filmId": 4922,
+                "name": "大红包",
+                "poster": "https://pic.maizuo.com/usr/movie/c3912dfbc8e53f1ca50db637bfb9ee99.jpg",
+                "actors": [
+                    {
+                        "name": "李克龙",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/964383f6010d5310b54155631f1cbe92.jpg"
+                    },
+                    {
+                        "name": "包贝尔",
+                        "role": "陈重",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/ac22d61dc31ea2fd64fed476e6df1688.jpg"
+                    },
+                    {
+                        "name": "克拉拉",
+                        "role": "Lily",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/30fddb3d1d12c0abb037c929723ef84f.jpg"
+                    },
+                    {
+                        "name": "贾冰",
+                        "role": "演员",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/1fa656201851daa6570405d12d42ccba.jpg"
+                    },
+                    {
+                        "name": "张一鸣",
+                        "role": "演员",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/72d6a428873e6816a5cc4bf932e47f59.jpg"
+                    }
+                ],
+                "director": "李克龙",
+                "category": "喜剧|爱情",
+                "synopsis": "陈重的前女友杜莹劈腿傍大款，两人的分手在公司闹得沸沸扬扬，颜面扫地的陈重向公司申请外调老家海南岛分公司再也不回来。临行前，陈重发现自己工作这八年为了发展业务社交广泛，领导、同事、客户结婚、生孩子自己随礼送出的红包就有30多万。陈重决定办一个假婚礼把这些年送出的红包收回来再去海南。当他找到前女友杜莹说明意图，希望杜莹能看在相爱一场的份上和自己假结婚收红包时，被杜莹和新男友高俊一顿奚落和嘲讽。陈重的好兄弟大瑞给受了刺激的陈重出了个主意，俩人决定找一个演员(Lily)扮演陈重的新娘子，办一场高大上的婚礼，即可收回红包，又可气一气杜莹。由此，一场好戏一环套一环的上演！",
+                "filmType": {
+                    "name": "2D",
+                    "value": 1
+                },
+                "nation": "中国大陆",
+                "language": "",
+                "videoId": "",
+                "premiereAt": 1579910400,
+                "timeType": 3,
+                "runtime": 100,
+                "grade": "7.2",
+                "item": {
+                    "name": "2D",
+                    "type": 1
+                },
+                "isPresale": true,
+                "isSale": false
+            },
+            {
+                "filmId": 5257,
+                "name": "拆弹专家2",
+                "poster": "https://pic.maizuo.com/usr/movie/4a2bec5290b94f7eb597913727b21df6.jpg",
+                "actors": [
+                    {
+                        "name": "邱礼涛",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/6735332cb677645542c2f136eb37e561.jpg"
+                    },
+                    {
+                        "name": "刘德华",
+                        "role": "潘乘风",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/ca47cd961fe0be0c91149f6bcca2f13d.jpg"
+                    },
+                    {
+                        "name": "刘青云",
+                        "role": "董卓文",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/82a5d97e318c447133cd6c8262cee846.jpg"
+                    },
+                    {
+                        "name": "倪妮",
+                        "role": "庞玲",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/e776871fe75f0367aa60957457a6f96c.jpg"
+                    },
+                    {
+                        "name": "谢君豪",
+                        "role": "演员",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/dd120eb1f6bda9f3b9c9e4c49785d0ce.jpg"
+                    }
+                ],
+                "director": "邱礼涛",
+                "category": "动作|犯罪",
+                "synopsis": "香港某处发生爆炸案，前拆弹专家潘乘风（刘德华 饰）因昏迷于现场，被警方怀疑牵涉其中。苏醒后的潘乘风只能一边逃亡一边查明真相，然而，他的好友董卓文（刘青云 饰）和他的前女友庞玲（倪妮 饰）却给他讲述了两段截然不同的经历。有计划的爆炸案接二连三发生，真相却越来越扑朔迷离……",
+                "filmType": {
+                    "name": "2D",
+                    "value": 1
+                },
+                "nation": "中国大陆,中国香港",
+                "language": "",
+                "videoId": "",
+                "premiereAt": 1608768000,
+                "timeType": 3,
+                "runtime": 0,
+                "grade": "8",
+                "item": {
+                    "name": "2D",
+                    "type": 1
+                },
+                "isPresale": true,
+                "isSale": false
+            },
+            {
+                "filmId": 5279,
+                "name": "温暖的抱抱",
+                "poster": "https://pic.maizuo.com/usr/movie/e856bdc65507b99800f22e47801fa781.jpg",
+                "actors": [
+                    {
+                        "name": "常远",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/49c5ca758acc818e76033468d9e0d3d1.jpg"
+                    },
+                    {
+                        "name": "常远",
+                        "role": "鲍抱",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/49c5ca758acc818e76033468d9e0d3d1.jpg"
+                    },
+                    {
+                        "name": "李沁",
+                        "role": "宋温暖",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/d28abd66cbb8dca0f359b89939866e66.jpg"
+                    },
+                    {
+                        "name": "沈腾",
+                        "role": "贾医生",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/98c43da4b43bcf161d5b9c905253c016.jpg"
+                    },
+                    {
+                        "name": "乔杉",
+                        "role": "王为仁",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/4b6da2deabe5dc7883321bb17372c25b.jpg"
+                    }
+                ],
+                "director": "常远",
+                "category": "喜剧",
+                "synopsis": "对整洁和计划有着超乎常人执念的鲍抱(常远 饰)，本以为自己是一个友情爱情的绝缘体，但在遇到个性率真宋温暖(李沁 饰) 、妙手“神经”贾医生(沈腾 饰)和假仁假义王为仁（乔杉 饰）之后，上演了一段阴差阳错的喜剧故事……",
+                "filmType": {
+                    "name": "2D",
+                    "value": 1
+                },
+                "nation": "中国大陆",
+                "language": "",
+                "videoId": "",
+                "premiereAt": 1609372800,
+                "timeType": 3,
+                "runtime": 0,
+                "grade": "8",
+                "item": {
+                    "name": "2D",
+                    "type": 1
+                },
+                "isPresale": true,
+                "isSale": false
+            },
+            {
+                "filmId": 5310,
+                "name": "吉祥如意",
+                "poster": "https://pic.maizuo.com/usr/movie/2c005981d5249b4bedb28596b6510173.jpg",
+                "actors": [
+                    {
+                        "name": "刘陆",
+                        "role": "演员",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/d56b58b6f4f8139bb529e3670575c0f5.jpg"
+                    },
+                    {
+                        "name": "大鹏",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/658eeb558bcaead96e7783e70dc6d79a.jpg"
+                    },
+                    {
+                        "name": "王吉祥",
+                        "role": "演员",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/5bab85c2477b69a1aaaceb4df8503107.jpg"
+                    },
+                    {
+                        "name": "大鹏",
+                        "role": "演员",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/658eeb558bcaead96e7783e70dc6d79a.jpg"
+                    }
+                ],
+                "director": "大鹏",
+                "category": "剧情|家庭",
+                "synopsis": "一位喜剧片导演突发奇想，回到东北农村老家，希望将一家人如何过年拍成一部文艺电影，结果遭遇一系列意外。因拍电影而聚齐的家庭成员们，完成了最后的聚会。",
+                "filmType": {
+                    "name": "2D",
+                    "value": 1
+                },
+                "nation": "中国大陆",
+                "language": "",
+                "videoId": "",
+                "premiereAt": 1611878400,
+                "timeType": 3,
+                "runtime": 80,
+                "grade": "7.2",
+                "item": {
+                    "name": "2D",
+                    "type": 1
+                },
+                "isPresale": true,
+                "isSale": false
+            },
+            {
+                "filmId": 4805,
+                "name": "刺杀小说家",
+                "poster": "https://pic.maizuo.com/usr/movie/346b0ca49a5fb38dd981fec3b3696be7.jpg",
+                "actors": [
+                    {
+                        "name": "杨幂",
+                        "role": "屠灵",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/a36e532510e8933e066fb64cffb90d5d.jpg"
+                    },
+                    {
+                        "name": "董子健",
+                        "role": "路空文",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/a0ddd1c7b8b38a35835d1cf63a7bf266.jpg"
+                    },
+                    {
+                        "name": "于和伟",
+                        "role": "李沐",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/d97b2367f992029a74c56bb0904908c6.jpg"
+                    },
+                    {
+                        "name": "路阳",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/3d31381be135c478b63ae8eccf683b43.jpg"
+                    },
+                    {
+                        "name": "雷佳音",
+                        "role": "关宁",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/588839c8a41ba4c6f595a9619d64450d.jpg"
+                    }
+                ],
+                "director": "路阳",
+                "category": "奇幻|动作|冒险",
+                "synopsis": "异世界皇都，天神赤发鬼残暴统治，滥杀无辜。少年空文因被赤发鬼追杀，决定奋起反击。在黑甲的指引下，踏上了凡人弑神之路。这是小说家路空文笔下的奇幻世界。没想到小说的进程，竟然影响着现实世界。这时一名男子接下了刺杀他的任务…",
+                "filmType": {
+                    "name": "4D",
+                    "value": 13
+                },
+                "nation": "中国大陆",
+                "language": "",
+                "videoId": "",
+                "premiereAt": 1613088000,
+                "timeType": 3,
+                "runtime": 130,
+                "item": {
+                    "name": "4D",
+                    "type": 13
+                },
+                "isPresale": true,
+                "isSale": false
+            },
+            {
+                "filmId": 5295,
+                "name": "许愿神龙",
+                "poster": "https://pic.maizuo.com/usr/movie/47aa5a3ad2ebff403d073288e4365694.jpg",
+                "actors": [
+                    {
+                        "name": "克里斯·艾伯翰斯",
+                        "role": "导演",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/f1af6ac0cbc5a6c5ef1a513b3048fd54.jpg"
+                    },
+                    {
+                        "name": "成龙",
+                        "role": "神龙 Long",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/8e1271b7bd376f4895755d0552442760.jpg"
+                    },
+                    {
+                        "name": "牛骏峰",
+                        "role": "丁思齐 Din",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/47cb0e1d934d70154bf1b4d631267536.jpg"
+                    },
+                    {
+                        "name": "薇薇安",
+                        "role": "王俐娜 Li Na",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/184b42ecf92899543b3c652eaa16af67.jpg"
+                    },
+                    {
+                        "name": "苏柏丽",
+                        "role": "丁思齐妈妈 Mom",
+                        "avatarAddress": "https://pic.maizuo.com/usr/movie/2a06e206a37c86aff8fb41b1d5e436bc.jpg"
+                    }
+                ],
+                "director": "克里斯·艾伯翰斯",
+                "category": "动画|喜剧|奇幻",
+                "synopsis": "你知道这世上仅存一条粉红色的许愿神龙吗？他能够实现许愿者任何逆天改命的愿望。这样的神力引得不少人在暗中寻找神龙的踪迹，然而普普通通的上海小青年丁思齐误打误撞打开了神龙的封印。千年代沟引发连串爆笑经历，被绑定的一人一龙踏上了一段妙想天开又惊险万分的旅途…",
+                "filmType": {
+                    "name": "3D",
+                    "value": 2
+                },
+                "nation": "美国,中国大陆",
+                "language": "",
+                "videoId": "",
+                "premiereAt": 1610668800,
+                "timeType": 3,
+                "runtime": 99,
+                "grade": "7.2",
+                "item": {
+                    "name": "3D",
+                    "type": 2
+                },
+                "isPresale": true,
+                "isSale": false
+            }
+        ],
+        "total": 50
+    },
+    "msg": "ok"
+}

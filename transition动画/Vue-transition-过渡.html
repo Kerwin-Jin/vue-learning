@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Vue-transition</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<style type="text/css">
+			body{
+				overflow-x: hidden;
+			}
+			.kerwin-enter-active{
+				animation: aaa 1.5s;
+			}
+
+			.kerwin-leave-active{
+				animation: aaa 1.5s reverse;
+			}
+
+			@keyframes aaa{
+				0%{
+					opacity: 0;
+					transform: translateX(200px);
+				}
+				100%{
+					opacity: 1;
+					transform: translateX(0px);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="app">
+			<button @click="isShow=!isShow">按钮</button>
+			<transition name="kerwin" appear mode="out-in">
+				<div v-if="isShow" key="1">123114234</div>
+				<div v-else key="2">凤凰科技收到回复就爱上的看法</div>
+			</transition>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var app = new Vue({
+			el:"#app",
+			data:{
+				isShow:true
+			}
+		})
+	</script>
+</html>

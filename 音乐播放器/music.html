@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>音乐播放器</title>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		
+		<style type="text/css">
+			body{
+				margin: 0;
+				padding: 0;
+				background-image: linear-gradient(50deg, #e74c3c,#3498db);
+				height: 80vh;
+			}
+			ul{
+				margin: 0 5px;
+				padding: 0;
+				list-style: none;
+			}
+			#app{
+				width: 800px;
+				height: 500px;
+				/* background-color: pink; */
+				margin: 0 auto;
+				margin-top: 200px;
+				display: flex;
+				border-radius: 5px;
+				overflow: hidden;
+				flex-direction: column;
+			}
+			#searchBar{
+				/* width: 800px; */
+				height: 50px;
+				background-color: #11a2de;
+				display: flex;
+				justify-content: space-between;
+			}
+			.brand{
+				color: #fff;
+				line-height: 50px;
+				margin-left: 20px;
+				font-size: 25px;
+			}
+			#search input{
+				border: none;
+				outline: none;
+				height: 30px;
+				font-size: 15px;
+				border-radius: 25px;
+				padding-left: 10px;
+				box-sizing: border-box;
+			}
+			#search button{
+				width: 50px;
+				height: 100%;
+				border: none;
+				outline: none;
+			}
+			#main{
+				flex: 1;
+				background-color: #fff;
+				/* filter: blur(2px); */
+				opacity: 0.5;
+				display: flex;
+				justify-content: space-around;
+			}
+			#main span{
+				cursor: pointer;
+				
+			}
+			#main span:hover{
+				color: red;
+			}
+			#main div{
+				border: 1px solid #11A2DE;
+				flex: 1;
+			}
+			#controlBar{
+				width: 100%;
+				height: 40px;
+				background-color: #f1f2f7;
+			}
+			#controlBar audio{
+				width: 100%;
+				height: 40px;
+				outline: none;
+				border: none;
+			}
+			#main .center{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			#main .circle{
+				width:250px;
+				height: 250px;
+				border-radius: 125px;
+				overflow: hidden;
+				border: 1px solid #000;
+			}
+			#main .circle img{
+				width: auto;
+				height: 250px;
+				width: 250px;
+			}
+			#mv video{
+				position: fixed;
+				width: 800px;
+				height: 546px;
+				left: 50%;
+				top: 200px;
+				transform: translateX(-50%);
+				/* display: none; */
+			}
+			.closeMV{
+				position: fixed;
+				left: 100px;
+				bottom: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div id="searchBar">
+				<div class="brand">悦听</div>
+				<div id="search">
+					<input type="text" v-model="query" @keyup.enter="searchMusic()"/><button type="button">搜索</button>
+				</div>
+			</div>
+			<div id="main">
+				<div>
+					<ul>
+						<li v-for="(item,index) in musicList">{{index+1}}.<span @click="playMusic(item.id)">play:</span>{{item.name}}<span v-if="item.mvid!=0" @click="playMV(item.mvid)">MV</span></li>
+					</ul>
+				</div>
+				<div class="center">
+					<div class="circle">
+						<img :src="imgUrl" alt="">
+					</div>
+				</div>
+				<div>
+					<h3>热门评论</h3>
+					<ul>
+						<li v-for="(item,index) in hotComments"><h5>{{item.user.nickname}}</h5><p>{{item.content}}</p></li>
+					</ul>
+				</div>
+			</div>
+			<div id="controlBar">
+				<audio v-bind:src="audioSrc" autoplay="autoplay" controls="controls" v-on:play="play()" @pause="pause()">
+					当前浏览器不支持audio
+				</audio>
+			</div>
+			<a class="closeMV" href="javascript:;" @click="close()" v-show="isShow">关闭MV</a>
+			<div id="mv" v-show="isShow">
+				
+				<video :src="mvUrl" controls="controls" autoplay="autoplay" >
+					
+				</video>
+			</div>
+		</div>
+	</body>
+	<script src="./main.js"></script>
+</html>

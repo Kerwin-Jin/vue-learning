@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>vue-refs</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<style type="text/css">
+			button{
+                border: none;
+                outline: none;
+                cursor: pointer;
+                border-radius: 5px;
+                height: 50px;
+                width: 100px;
+                transition: 0.2s;
+                margin-bottom: 10px;
+            }
+            button:hover{
+                background-color: #f40;
+                color: white;
+            }
+            .item{
+                border: 1px solid #000;
+                width: 300px;
+                margin: 10px;
+                border-radius: 10px;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .item button:hover{
+                background-color: #569cd6;
+            }
+            .detail{
+                width: 400px;
+                height: 300px;
+                border: 1px solid #000;
+                border-radius: 5px;
+                position: fixed;
+                right: 10px;
+                top: 300px;
+                padding: 10px;
+            }
+
+		</style>
+	</head>
+	<body>
+		<div id="app">
+            <button @click="handleClick()">获取信息</button>
+            {{pdetail}}
+            <film-item  v-for="data,index in dataList" :key="data.filmId" :item="data" @myevent="handleEvent"></film-item>
+
+            <film-detail :detailinfo="pdetail"></film-detail>
+            
+		</div>
+	</body> 
+    <script type="text/javascript">
+    
+
+        Vue.component("filmDetail",{
+            template:`
+                <div class="detail">{{detailinfo}}</div>
+            `,
+            props:["detailinfo"]
+        })
+
+        
+        Vue.component("filmItem",{
+            template:`
+                <div class="item">
+                   <img :src="item.poster">
+                   <h1>{{item.name}}</h1>
+                   <button @click="getDetail(item)">详情</button>
+                </div>
+            `,
+            props:["item"],
+            methods:{
+                getDetail(item){
+                    // console.log(item.synopsis);
+                    this.$emit("myevent",item.synopsis);
+                },
+                
+            }
+        })
+		
+		new Vue({
+			el:"#app",
+			data:{
+                dataList:[],
+                pdetail:""
+			},
+			methods:{
+                handleClick(){
+                    fetch("./info.json")
+                    .then(res=>res.json())
+                    .then(res=>{
+                        // console.log(res.data.films);
+                        this.dataList = res.data.films;
+                    })
+                },
+
+                handleEvent(info){
+                    // console.log(info);
+                    this.pdetail = info;
+                }
+			}
+		})
+	</script>
+</html>

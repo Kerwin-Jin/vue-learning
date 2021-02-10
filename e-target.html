@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>vue基础</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<button type="button" @click="change" data-id="2">点击</button>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var app = new Vue({
+			el:"#app",
+			data:{
+				disStr:"切换显示",
+				isShow:true
+			},
+			methods:{
+				change(e){
+					console.log(e.target.dataset.id);
+				}
+			}
+		})
+	</script>
+</html>

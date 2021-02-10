@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>vue组件</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<Vnav></Vnav>
+			<Vaside></Vaside>
+			<Vaside></Vaside>
+			<Vaside></Vaside>
+			<Vcontent></Vcontent>
+			<Vcontent></Vcontent>
+			<Vcontent></Vcontent>
+			<Vcontent></Vcontent>
+		</div>
+	</body> 
+	<script type="text/javascript">
+		
+		
+		// 导航栏组件   全局组件
+		Vue.component("Vnav",{
+			data:function(){
+				return {
+					msg:"我是Vnav导航栏，是个全局组件"
+				}
+			},
+			template:`<h1>{{msg}}</h1>`
+		})
+		
+		// 侧边栏组件   全局组件
+		Vue.component("Vaside",{
+			data:function(){
+				return {
+					msg:"我是侧边栏Vaside，也是个全局组件"
+				}
+			},
+			template:`<h2>{{msg}}</h2>`
+		})
+		
+		
+		// 按钮组件   局部组件
+		const Vbtn = {
+			template:`<button>按钮</button>`
+		}
+		
+		
+		//内容组件   局部组件
+		const Vcontent = {
+			data:function(){
+				return {
+					msg:"我是内容Vcontent，是个局部组件"
+				}
+			},
+			template:`<div><h3>{{msg}}</h3><Vbtn></Vbtn></div>`,
+			components:{
+				Vbtn:Vbtn
+			}
+		}
+		
+		
+		
+		
+		//整个APP页面
+		let app = new Vue({
+			el:"#app",
+			data:{
+				
+			},
+			components:{
+				Vcontent
+			}
+		})
+	</script>
+</html>

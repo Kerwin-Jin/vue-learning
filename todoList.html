@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>todoList</title>
+		<script src="https://lib.baomitu.com/jquery/3.5.1/jquery.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<style type='text/css'>
+			#wrap{
+				width: 800px;
+				height: 800px;
+				background-color: pink;
+				display: flex;
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: center;
+				margin: 0 auto;
+				outline: none;
+			}
+			ol,ul{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			#title{
+				margin-top: 20px;
+				border: none;
+				width: 300px;
+				height: 50px;
+				font-size: 20px;
+			}
+			#undo{
+				margin-top: 10px;
+				width: 300px;
+				/* height: 100px; */
+				border: 1px solid #000;
+			}
+			#done{
+				margin-top: 10px;
+				width: 300px;
+				height: 100px;
+				border: 1px solid #000;
+			}
+			
+			ol a{
+				float: right;
+			}
+			.changeBgc{
+				cursor: pointer;
+				background-color: #999;
+			}
+			h1{
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>JianYi便签</h1>
+		<div id="wrap">
+			<div><input type="text" v-model="inputVal" id="title" value="" placeholder="请输入待办事项" @keyup.enter="add"/></div>
+			<div id="undo">
+				待办<span style="color: red;" id="undoCount"></span>
+				<ol>
+					<li v-for="item,index in doingList" :key="index">
+						<input type="checkbox" @click.prevent="changeState(item.id)"/>
+						{{index+1}}:{{item.title}}:{{item.id}}
+						<a href="javascript:;" @click="delItem(item.id)">删除</a>
+					</li>
+				</ol>
+			</div>
+			<div id="done">
+				已完成<span style="color: seagreen;" id="doneCount"></span>
+				<ul>
+					<li v-for="item,index in doneList" :key="index">
+						<input type="checkbox" @click.prevent="changeState(item.id)"/>
+						{{index+1}}:{{item.title}}:{{item.id}}
+						<a href="javascript:;" @click="delItem(item.id)">删除</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var app = new Vue({
+			el:"#wrap",
+			data:{
+				inputVal:"",
+				todoList:[]
+			},
+			computed:{
+				//通过过滤todolist数据，得到未做的列表和已做的列表
+				doingList:function(){
+					let arr = this.todoList.filter(function(item,index,self){
+						return !item.isDone;
+					})
+					
+					return arr;
+				},
+				doneList:function(){
+					let arr = this.todoList.filter(function(item,index,self){
+						return item.isDone;
+					})
+					
+					return arr;
+				}
+			},
+			methods:{
+				add:function(){
+					this.todoList.push({
+						title:this.inputVal,
+						isDone:false,
+						id:this.todoList.length
+					});
+					this.inputVal = "";
+					
+					this.saveData();
+				},
+				
+				changeState:function(id,$event){
+					this.todoList[id].isDone = !this.todoList[id].isDone;
+					this.saveData();
+				},
+				
+				delItem:function(id){
+					this.todoList.splice(id,1);
+					this.saveData();
+				},
+				//将数据保存到本地存储
+				saveData:function(){
+					localStorage.todoList = JSON.stringify(this.todoList);
+					// localStorage.setItem("todoList",JSON.stringify(this.todoList));
+				}
+			},
+			mounted:function(){
+				this.todoList=localStorage.todoList?JSON.parse(localStorage.todoList):[];
+			}
+		})
+		
+	</script>
+</html>

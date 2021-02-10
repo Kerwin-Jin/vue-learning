@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>天知道</title>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<style type="text/css">
+			#displayArea{
+				display: flex;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			#displayArea li{
+				border-right: 1px solid #5F9EA0;
+				padding: 0 10px;
+			}
+			#defaultCity span{
+				margin: 5px 10px;
+				cursor: pointer;
+			}
+			#defaultCity span:hover{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<h1>天知道</h1>
+			<input type="text" src="" v-model="city" @keyup.enter="query()"/><button @click="query()">搜索</button>
+			<div id="defaultCity">
+				<span v-for="(item,index) in cities" @click="changeCity(cities[index])">{{item}}</span>
+			</div>
+			<div>
+				<ul id="displayArea">
+					<li v-for="item in weatherList">{{item.fengxiang}}</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+		var app = new Vue({
+			el:"#app",
+			data:{
+				city:'',
+				weatherList:[],
+				cities:["北京","上海","深圳","广州"]
+			},
+			methods:{
+				query(){
+					if(this.city.trim() == ""){
+						alert("请输入城市名");
+						this.city = "";
+						return ;
+					}
+					var that = this;
+					axios.get("http://wthrcdn.etouch.cn/weather_mini?city="+this.city.trim())
+					.then(function(response){
+						that.weatherList = response.data.data.forecast;
+						// console.log(response.data.data.forecast);
+						console.log(response.data.data.city);
+					})
+					.catch(function(err){
+						alert("未查到相关数据！")
+						console.log(err);
+					})
+				},
+				//当点击城市名字的时候只需要将city的值改掉再查询一次就好了，聪明！
+				changeCity(city){
+					this.city = city;
+					this.query();
+				}
+			}
+		})
+		
+	</script>
+</html>

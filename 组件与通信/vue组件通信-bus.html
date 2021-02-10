@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>vue-refs</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<child1></child1>
+			<child2></child2>
+			{{msg}}
+		</div>
+	</body> 
+	<script type="text/javascript">
+
+		//中央事件总线  bus
+		const bus = new Vue();
+		
+		Vue.component("child1",{
+			template:`
+				<div>
+					Child1-发布者
+					<button @click="handleClick()">详情</button>	
+				</div>
+			`,
+			methods:{
+				handleClick(){
+					bus.$emit("kerwin","男人看了成魔。。。。");
+				}
+			}
+		})
+
+
+		Vue.component("child2",{
+			template:`
+				<div>
+					Child2-订阅者	
+				</div>
+			`,
+			mounted(){
+				bus.$on("kerwin",function(data){
+					console.log(data);
+				})
+			}
+		})
+
+
+
+		new Vue({
+			el:"#app",
+			data:{
+				msg:"nihao"
+			},
+			methods:{
+				
+			}
+		})
+	</script>
+</html>

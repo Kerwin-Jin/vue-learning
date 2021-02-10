@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>vue基础</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<style type="text/css">
+			#app{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			#app a{
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				text-decoration: none;
+				border: 1px solid cadetblue;
+				text-align: center;
+				line-height: 50px;
+				margin: 50px;
+				font-size: 30px;
+				
+			}
+			#app img{
+				width: 300px;
+				height: 200px;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<a href="javascript:;" v-show="index!=0" @click="pre()"><</a>
+			<img v-bind:src="imgSrc[index]" >
+			<a href="javascript:;" v-show="index<imgSrc.length-1" @click="next()">></a>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var app = new Vue({
+			el:"#app",
+			data:{
+				imgSrc:[
+					'https://imglf6.lf127.net/img/MkQrTXB3T3JXVzZ3Wld6Y1FRNms5ZGtTS2F5ZEFHNFJTNy9DMFhWU2xwUmVseEZNUG85b1p3PT0.jpg?imageView&thumbnail=1680x0&quality=96&stripmeta=0&type=jpg',
+					'https://imglf6.lf127.net/img/MkQrTXB3T3JXVzZ3Wld6Y1FRNms5Vzd2M0xzR2phRFFlVlk2dGxNL0p2UE05QmZqc0cyOGVBPT0.jpg?imageView&thumbnail=1680x0&quality=96&stripmeta=0&type=jpg',
+					'https://imglf6.lf127.net/img/MkQrTXB3T3JXVzdQOUo4MkRlNzRKdVBaVmFtYW4wck5jV3lYVWRHUDl5TWt2M1FYUElxekt3PT0.jpg?imageView&thumbnail=1680x0&quality=96&stripmeta=0&type=jpg',
+					'https://imglf3.lf127.net/img/MkQrTXB3T3JXVzdQOUo4MkRlNzRKbGJYdlMzNTRIUDFYQmc2amtFdjJmNEVpUXFXWTFHSndRPT0.jpg?imageView&thumbnail=1680x0&quality=96&stripmeta=0&type=jpg',
+					'https://imglf4.lf127.net/img/MkQrTXB3T3JXVzdQOUo4MkRlNzRKdTV1U2NKekJRZzR3OWp6d2RuSVpXRmhFZHFyakNFUkJnPT0.jpg?imageView&thumbnail=1680x0&quality=96&stripmeta=0&type=jpg',
+					'https://imglf4.lf127.net/img/MkQrTXB3T3JXVzdQOUo4MkRlNzRKbmdJOUJHbUtRQnNpUUJxSEhnUG1UUUVYeFI1UExXODhBPT0.jpg?imageView&thumbnail=1680x0&quality=96&stripmeta=0&type=jpg'
+				],
+				index:1,
+				displayFlag:true
+			},
+			methods:{
+				pre(){
+					if(this.index == 0){
+						alert("没有上一张啦！");
+					}else{
+						this.index--;
+					}
+				},
+				next(){
+					if(this.index == this.imgSrc.length-1){
+						alert("没有下一张啦！");
+					}else{
+						this.index++;
+					}
+				}
+			}
+		})
+	</script>
+</html>

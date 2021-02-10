@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>axios</title>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	</head>
+	<body>
+		<button type="button" id="get">get请求</button>
+		<button type="button" id="post">post请求</button>
+	</body>
+	<script type="text/javascript">
+		
+		//get请求
+		document.querySelector("#get").onclick = function(){
+			axios.get("https://autumnfish.cn/api/joke/list?num=3")
+			.then(function(response){
+				console.log(response);
+			},function(err){
+				console.log(err);
+			})
+		}
+		
+		
+		//post请求
+		document.querySelector("#post").onclick = function(){
+			axios.post("https://autumnfish.cn/api/user/reg",{username:'wujun'})
+			.then(function(response){
+				console.log(response);
+			},function(err){
+				console.log(err);
+			})
+		}
+	</script>
+</html>

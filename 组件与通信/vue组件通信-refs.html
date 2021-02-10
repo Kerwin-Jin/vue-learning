@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>vue-refs</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<a href="javascript:;" ref="mylink" data="link1">链接</a>
+			<input type="text" ref="mytext">
+			<button @click="handleAdd()">添加</button>
+			<child ref="mychild"></child>
+		</div>
+	</body> 
+	<script type="text/javascript">
+		
+		
+		// ref放在标签上，拿到的是原生节点，
+		// ref放在标签上，拿到的是组件对象，通信功能
+		Vue.component("child",{
+			template:`
+				<div style="background:yellow;">{{name}}</div>
+			`,
+			data(){
+				return{
+					name:"11111111111111111111"
+				}
+			}
+		})
+		
+		new Vue({
+			el:"#app",
+			data:{
+				msg:"nihao"
+			},
+			methods:{
+				handleAdd(){
+					// console.log(this.$refs.mytext.value);
+					// console.log(this.$refs.mylink.getAttribute("href"));
+					// console.log(this.$refs.mylink.getAttribute("data"));
+					console.log(this.$refs.mychild.name);
+					this.$refs.mychild.name = "222222222222";
+				}
+			}
+		})
+	</script>
+</html>

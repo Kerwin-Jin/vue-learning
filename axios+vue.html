@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>axios</title>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	</head>
+	<body>
+		<div id="app">
+			<button type="button" id="get" @click="getJoke()">获取随机笑话</button>
+			<!-- <button type="button" id="post">post请求</button> -->
+			<p>{{joke}}</p>
+		</div>
+	</body>
+	<script type="text/javascript">
+		
+		var app = new Vue({
+			el:"#app",
+			data:{
+				joke:'很好笑的笑话'
+			},
+			methods:{
+				getJoke(){
+					var that = this;
+					axios.get("https://autumnfish.cn/api/joke/")
+					.then(function(response){
+						// this.joke = response.status;
+						// console.log(response);
+						console.log(response.data);
+						that.joke = response.data;
+					},function(err){
+						console.log(err);
+					})
+				}
+			}
+		})
+		
+	</script>
+</html>

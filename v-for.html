@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>v-for</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	</head>
+	<body>
+		
+		<div id="app">
+			<ul>
+				<li v-for="(item,index) in arr" v-text="index +'---->'+item"></li>
+			</ul>
+			<button type="button" @click="add()">添加</button>
+			<button type="button" @click="sub()">删除</button>
+			<h2 v-for="item in vagetables">{{item.name}}</h2>
+		</div>
+	</body>
+	<script type="text/javascript">
+		// note: v-for指令的作用：根据数据生成列表结构
+		// 		 数组经常和v-for结合使用
+		// 		 语法是（item，index） in 数据
+		// 		 item和index可以结合其他指令一起使用
+		// 		 数组长度的更新会同步到页面上，是响应式的
+		var app = new Vue({
+			el:"#app",
+			data:{
+				arr:["北京","上海","深圳","广州"],
+				vagetables:[
+					{name:"黄瓜"},
+					{name:"西红柿"}
+				]
+			},
+			methods:{
+				add(){
+					this.vagetables.push({name:"金针菇"})	//添加新元素到末尾
+				},
+				sub(){
+					this.vagetables.shift();	//移除数组第一个元素
+				}
+			}
+		})
+	</script>
+</html>

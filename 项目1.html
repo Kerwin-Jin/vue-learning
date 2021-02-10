@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>vue基础</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<style type="text/css">
+			body{
+				position: relative;
+				display: flex;
+				justify-content: center;
+				top: 300px;
+			}
+			#app{
+				width: 600px;
+				display: flex;
+			}
+			#app button{
+				width: 135px;
+				height: 70px;
+				background-color: #c7c7c7;
+				color: red;
+				font-size: 50px;
+				border: none;
+				outline: none;
+				cursor: pointer;
+			}
+			#app>button:nth-child(1){
+				border-radius: 10px 0 0 10px;
+				
+			}
+			#add{
+				border-radius: 0 10px 10px 0;
+			}
+			#app span{
+				width: 160px;
+				height: 70px;
+				font-size: 50px;
+				text-align: center;
+				line-height: 70px;
+				border: 1px solid #c7c7c7;
+				box-sizing: border-box;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<button type="button" @click="sub()">-</button>
+			<span v-text="num"></span>
+			<button type="button" id="add" @click="add()">+</button>
+			
+		</div>
+	</body>
+	<script type="text/javascript">
+		var app = new Vue({
+			el:"#app",
+			data:{
+				num:1
+			},
+			methods:{
+				add(){
+					this.num +=1;
+					if(this.num>10){
+						this.num = 10;
+						alert("不能加了");
+					}
+					
+				},
+				sub(){
+					this.num -=1;
+					if(this.num<0){
+						this.num = 0;
+						alert("不能减了");
+					}
+				}
+			}
+		})
+	</script>
+</html>

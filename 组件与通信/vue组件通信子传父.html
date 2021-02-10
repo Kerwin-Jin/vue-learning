@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>vue组件</title>
+		<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<Parent></Parent>
+		</div>
+	</body> 
+	<script type="text/javascript">
+		
+		
+		Vue.component("Child",{
+			data(){
+				return{
+					msg:"我是子组件"
+				}
+			},
+			template:`
+			<div style="border:1px solid #f40">
+				<h3>我是子</h3>
+				<input type="text" @keyup.enter="handleInput"/>
+			</div>
+			`,
+			
+			methods:{
+				handleInput(e){
+					let newVal = e.target.value;
+					this.$emit("inputHandler",newVal);
+				}
+			}
+		})
+		
+		const Parent = {
+			data(){
+				return{
+					newVal:""
+				}
+			},
+			template:`
+				<div>
+					<h3>
+						我是父
+					</h3>
+					<h3>
+						子传父的数据：{{newVal}}
+					</h3>
+					<Child @inputHandler="pchange"></Child>
+				<div>
+			`,
+			methods:{
+				pchange(newVal){
+					this.newVal = newVal;
+				}
+			}
+		}
+		
+		//整个APP页面
+		let app = new Vue({
+			el:"#app",
+			data:{
+				
+			},
+			components:{
+				Parent
+			}
+		})
+	</script>
+</html>
