@@ -7,7 +7,16 @@
             <li>宝贝计划</li> -->
             <li v-for="(item) in dataList" :key="item.id" @click="handleClick(item.id)">
                 <img :src="item.img | handleUrl" alt="">
-                <h3> {{item.nm}}</h3>
+                <div>
+                    <h4>{{item.nm}}</h4>
+                    <span>观众评{{item.sc}}</span>
+                    <span :title="item.star">主演:{{item.star | starFilter}}</span>
+                    <span>上映时间:{{item.rt}}</span>
+                    <span>{{item.showInfo}}</span>
+                </div>
+                <div>
+                    购票
+                </div>
             </li>
         </ul>
     </div>
@@ -44,6 +53,9 @@ export default {
             // console.log(url.replace(/w.h\//,""));
             // http://p0.meituan.net/w.h/movie/72291e1cbc83311656e01e828ca79ddd2106074.jpg
             return url.replace(/w.h\//,"");
+        },
+        starFilter(starStr){
+            return starStr.replace(/,/g," ");
         }
     },
     methods:{
@@ -76,23 +88,38 @@ export default {
         margin: 0;
         padding: 0;
     }
-    ul>li{
+    ul li{
         /* width: inherit; */
         border: 1px solid #000;
         cursor: pointer;
         border-radius: 5px;
         margin: 10px 0;
         text-align: center;
-        line-height: 80px;
         transition: font-size .2s;
         display: flex;
     }
-    ul>li:hover{
+    ul li div{
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    ul li div span{
+        line-height: 40px;
+    }
+    ul li div span{
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+    }
+    ul li:hover{
         background: rgb(63, 101, 224);
         color: white;
         font-size: 20px;
     }
     ul li img{
-        width: 100px;
+        width: 200px;
     }
+    
 </style>

@@ -1,10 +1,12 @@
 <template>
   <div>
     <div id="brand">猫眼电影</div>
-    <div id="sliper">
-      <h1>大轮播</h1>
-    </div>
-    <film-header></film-header>
+    <film-swiper>
+      <div class="swiper-slide">11144</div>
+      <div class="swiper-slide">22255</div>
+      <div class="swiper-slide">33366</div>
+    </film-swiper>
+    <film-header style="position:sticky;top:0;background:#fff;"></film-header>
   
     <router-view></router-view>
   </div>
@@ -12,6 +14,7 @@
 
 <script>
 import filmHeader from "./Film/FilmHeader.vue"
+import filmSwiper from "./Film/FilmSwiper.vue"
 export default {
   data(){
     return{
@@ -19,7 +22,8 @@ export default {
     }
   },
   components:{
-    filmHeader
+    filmHeader:filmHeader,
+    filmSwiper:filmSwiper
   }
 }
 </script>
