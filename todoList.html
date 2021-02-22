@@ -55,13 +55,13 @@
 		</style>
 	</head>
 	<body>
-		<h1>JianYi便签</h1>
 		<div id="wrap">
+		<h1>JianYi便签</h1>
 			<div><input type="text" v-model="inputVal" id="title" value="" placeholder="请输入待办事项" @keyup.enter="add"/></div>
 			<div id="undo">
 				待办<span style="color: red;" id="undoCount"></span>
 				<ol>
-					<li v-for="item,index in doingList" :key="index">
+					<li v-for="item,index in doingList" :key="item.id">
 						<input type="checkbox" @click.prevent="changeState(item.id)"/>
 						{{index+1}}:{{item.title}}:{{item.id}}
 						<a href="javascript:;" @click="delItem(item.id)">删除</a>
@@ -71,9 +71,9 @@
 			<div id="done">
 				已完成<span style="color: seagreen;" id="doneCount"></span>
 				<ul>
-					<li v-for="item,index in doneList" :key="index">
+					<li v-for="item,index in doneList" :key="item.id">
 						<input type="checkbox" @click.prevent="changeState(item.id)"/>
-						{{index+1}}:{{item.title}}:{{item.id}}
+						{{item.id+1}}:{{item.title}}:{{item.id}}
 						<a href="javascript:;" @click="delItem(item.id)">删除</a>
 					</li>
 				</ul>

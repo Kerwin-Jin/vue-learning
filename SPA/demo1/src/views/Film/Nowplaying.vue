@@ -1,10 +1,6 @@
 <template>
     <div>
         <ul>
-            <!-- <li>你好李焕英</li>
-            <li>唐人街探案三</li>
-            <li>新警察故事</li>
-            <li>宝贝计划</li> -->
             <li v-for="(item) in dataList" :key="item.id" @click="handleClick(item.id)">
                 <img :src="item.img | handleUrl" alt="">
                 <div>
@@ -110,7 +106,7 @@ export default {
     }
     ul li div span{
         overflow: hidden;
-        text-overflow:ellipsis;
+        text-overflow:ellipsis ;
         white-space: nowrap;
     }
     ul li:hover{
